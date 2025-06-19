@@ -9,7 +9,7 @@ export default class BedrockAgent extends AnthropicAgent {
 
   constructor(browser: Browser) {
     super(browser);
-    this.bedrockModel = "us.anthropic.claude-3-7-sonnet-20250219-v1:0";
+    this.bedrockModel = "us.anthropic.claude-sonnet-4-20250514-v1:0";
     this.bedrockClient = new AnthropicBedrock();
   }
 
