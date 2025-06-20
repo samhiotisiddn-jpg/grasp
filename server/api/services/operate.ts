@@ -21,6 +21,8 @@ export async function operate(task: string) {
     ],
   });
 
+  console.log(`👲 task: ${task}`);
+
   const providerNameOriginal = process.env.PROVIDER || "anthropic";
   const providerName = providerNameOriginal.toLowerCase();
   const text = await handle(providerName, task, browser, onNewMessage);

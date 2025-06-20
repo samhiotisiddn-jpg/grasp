@@ -22,7 +22,16 @@ If the website need to login, DO NOT ask user to provide credentials or login ma
   }
 
   setNewMessageListener(listener: (message: BasicMessage) => void) {
-    this.newMessageListener = listener;
+    this.newMessageListener = (message: BasicMessage) => {
+      if(message.content) {
+        if(typeof message.content === 'string') {
+          console.log(`💬 ${message.role}: ${message.content}`);
+        } else if(typeof message.content[0].type && message.content[0].type === 'text') {
+          console.log(`💬 ${message.role}: ${message.content[0].text}`);
+        }
+      }
+      listener(message)
+    };
   }
 
   async handle(task: string): Promise<string> {
