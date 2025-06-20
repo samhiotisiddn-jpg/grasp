@@ -182,7 +182,7 @@ export default function createTool(browser: Browser) {
           await browser.keydown(keyList);
         }
         // Calculate the scroll amount in pixels
-        const pxPerClick = 50;
+        const pxPerClick = 100;
         const scrollPx = (scrollAmount || 0) * pxPerClick;
         let scrollX = 0;
         let scrollY = 0;
